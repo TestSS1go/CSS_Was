@@ -32,3 +32,6 @@ def get_data():
         return jsonify(data)
     except Exception as e:
         return jsonify({'error': str(e)})
+        
+if __name__ == "__main__":  # 모듈이 실행 됨을 알림
+    app.run(host='0.0.0.0', debug=True, port=5000)
