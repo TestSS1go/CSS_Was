@@ -15,6 +15,7 @@ db_config = {
     'charset': 'utf8mb4'
 }
 #데이터베이스 정보 가져오기
+@app.route('/data')
 def get_data():
     try:
         connection = pymysql.connect(**db_config)
