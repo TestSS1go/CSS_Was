@@ -4,6 +4,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
+
 #Aura DB 연결 정보
 #향후 추가
 db_config = {
@@ -14,6 +15,11 @@ db_config = {
     'db' : 'tet',
     'charset': 'utf8mb4'
 }
+
+@app.route('/')
+def return_app() :
+    return 1
+    
 #데이터베이스 정보 가져오기
 @app.route('/data')
 def get_data():
