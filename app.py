@@ -16,9 +16,9 @@ db_config = {
     'charset': 'utf8mb4'
 }
 
-@app.route('/')
-def return_app() :
-    return 1
+@app.route('/health', methods=['GET'])
+def health_check() :
+    return jsonify({'status': 'UP'}), 200
     
 #데이터베이스 정보 가져오기
 @app.route('/data')
